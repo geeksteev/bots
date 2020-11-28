@@ -1,7 +1,6 @@
 # ps5-bot
-Requirements - 
-  Browser: FireFox
-  Website: Walmart.com
+Browser: FireFox
+Website: Walmart.com
 
 Seek out the product you want and replace the URL variable in the script to purchase the respective item.
 
