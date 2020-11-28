@@ -1,12 +1,15 @@
 # ps5-bot
+### Browser: FireFox
+### Website: Walmart.com
 
-No time for pleasantries, you'll need to install python-pip3
+Seek out the product you want and replace the URL variable in the script to purchase the respective item.
 
-sudo apt install -y python3-pip
+There are a few dependencies, you can install using:
+**sudo apt install -y python3-pip
+**pip3 install selenium 
+**pip3 install webdrivermanager
 
-Then  the python libraries
-pip3 install selenium 
+Usage: python3 playstation.py -u 'user@name.com' -p 'Y0uRp@s%wOrd'
 
-This *should* install the webdrivers needed, if not...I don't have time yet to refine. 
+Note: This is NOT configured to be headless, you will see the browser window open. I see this as a good thing in the event the script fails, you can quickly take control and finish the purchase.
 
-Should have called this Quick and Dirty PS5!
