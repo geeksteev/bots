@@ -1,8 +1,8 @@
 # bots
 
 ##### There are a few dependencies, you can install using:
-sudo apt install -y python3-pip
-pip3 install selenium 
+sudo apt install -y python3-pip &&
+pip3 install selenium &&
 pip3 install webdrivermanager
 
 Usage: python3 walmart.py -u 'user@name.com' -p 'Y0uRp@s%wOrd' -i https://walmart.com/yada-yada-item-url
