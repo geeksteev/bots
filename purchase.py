@@ -4,9 +4,8 @@ from selenium import webdriver
 from selenium.webdriver.common.by import By
 from webdriver_manager.firefox import GeckoDriverManager
 
-def buy_product(username, password):
+def buy_product(username, password, url):
     driver = webdriver.Firefox(executable_path=GeckoDriverManager().install())
-    url = 'https://www.walmart.com/ip/Sony-PlayStation-4-1TB-Slim-Gaming-Console/101507200'
 
     # Navigate to URL
     driver.get(url)
@@ -45,12 +44,22 @@ def buy_product(username, password):
     # driver.find_element_by_id('button').click()   # NEED to fix. Can't seem to get past this button. Need to take a breather.
 
 
+def check_url(url):
+    if 'walmart.com' in url:
+        return(True)
+    else:
+        return(False)
+
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
     parser.add_argument(
         '-u', '--username', help="Enter the username in SINGLE QUOTES, using the following format: 'username@mail.com' ")
     parser.add_argument('-p', '--password', help="Enter the password in SINGLE QUOTES, using the following format: 'g&ghs3k)!@(*7jh@KJhjkh8' ")
+    parser.add_argument('-i', '--item', help="Enter the URL of the item you wish to purchase. The URL MUST be for Walmart.com or the script will fail.")
 
 args = parser.parse_args()
 
-buy_product(args.username, args.password)
+if check_url(args.item) == True:
+        buy_product(args.username, args.password, args.item)
+else:
+    print("Please enter a Walmart.com URL")
